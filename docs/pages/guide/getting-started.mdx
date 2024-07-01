@@ -1,0 +1,51 @@
+# Getting Started
+
+## Setup
+
+First, create basic es6 typescript project:
+
+```bash
+npm init -y
+npm install typescript
+npx tsc --init
+```
+
+Set module in `package.json`:
+
+```json
+{
+  "type": "module"
+}
+```
+
+Update `tsconfig.json`:
+
+```json
+{
+  "target": "es6",
+  "module": "es6"
+}
+```
+
+Then, enable `experimentalDecorators` and `emitDecoratorMetadata` in `tsconfig.json`:
+
+```json
+{
+  "experimentalDecorators": true,
+  "emitDecoratorMetadata": true
+}
+```
+
+## Install required dependencies
+
+- [`buny`](/packages/buny)
+- [`@buny/core`](/packages/core)
+- [`@buny/ioc`](/packages/ioc)
+- [`@buny/di`](/packages/di)
+- [`@buny/logger`](/packages/logger)
+- [`@buny/config`](/packages/config)
+- [`@buny/event`](/packages/event)
+
+```bash
+npm install buny @buny/core @buny/ioc @buny/di @buny/logger @buny/config @buny/event
+```

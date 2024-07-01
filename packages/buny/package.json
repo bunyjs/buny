@@ -1,0 +1,48 @@
+{
+  "name": "buny",
+  "description": "toolkit for BunyJS applications",
+  "version": "0.0.1",
+  "homepage": "https://bunyjs.com/packages/buny",
+  "repository": "https://github.com/bunyjs/buny/tree/main/packages/buny",
+  "author": {
+    "name": "meslzy",
+    "email": "i@meslzy.com",
+    "url": "https://meslzy.com"
+  },
+  "type": "module",
+  "bin": "dist/bin.js",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "scripts": {
+    "watch": "rosepack -w",
+    "build": "rosepack",
+    "lint": "eslint --fix"
+  },
+  "dependencies": {
+    "execa": "^9.3.0",
+    "magic-string": "^0.30.10",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-commonjs": "^25.0.8",
+    "@rollup/pluginutils": "^5.1.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "typescript": "^5.5.2",
+    "@swc/core": "^1.6.6",
+    "rollup": "^4.18.0",
+    "commander": "^12.1.0",
+    "rosetil": "^1.0.5",
+    "fast-glob": "^3.3.2",
+    "roserc": "^1.0.0",
+    "vite": "^5.3.2"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "buny"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "mit"
+}

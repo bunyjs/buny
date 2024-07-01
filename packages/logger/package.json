@@ -1,0 +1,40 @@
+{
+  "name": "@bunyjs/logger",
+  "description": "logger module for BunyJS applications",
+  "version": "0.0.1",
+  "homepage": "https://bunyjs.com/packages/logger",
+  "repository": "https://github.com/bunyjs/buny/tree/main/packages/logger",
+  "author": {
+    "name": "meslzy",
+    "email": "i@meslzy.com",
+    "url": "https://meslzy.com/"
+  },
+  "type": "module",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "scripts": {
+    "watch": "rosepack -w",
+    "build": "rosepack",
+    "lint": "eslint --fix",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0"
+  },
+  "peerDependencies": {
+    "@bunyjs/di": "*",
+    "@bunyjs/ioc": "*",
+    "@bunyjs/config": "*"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "buny",
+    "logger"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "mit"
+}

@@ -1,0 +1,24 @@
+{
+  "index": {
+    "title": "Buny",
+    "hidden": true
+  },
+  "guide": {
+    "title": "Guide"
+  },
+  "packages": {
+    "title": "Packages"
+  },
+  "ecosystem": {
+    "type": "page",
+    "title": "Ecosystem",
+    "href": "https://ecosystem.bunyjs.com",
+    "newWindow": true
+  },
+  "database": {
+    "type": "page",
+    "title": "Database",
+    "href": "https://database.bunyjs.com",
+    "newWindow": true
+  }
+}

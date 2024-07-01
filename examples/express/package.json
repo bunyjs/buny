@@ -1,0 +1,23 @@
+{
+  "name": "@example/express",
+  "type": "module",
+  "main": "source/app.ts",
+  "scripts": {
+    "dev": "buny dev",
+    "start": "buny start"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "@bunyjs/core": "*",
+    "@bunyjs/di": "*",
+    "@bunyjs/ioc": "*",
+    "@bunyjs/config": "*",
+    "@bunyjs/event": "*",
+    "@bunyjs/logger": "*"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "buny": "*"
+  },
+  "private": true
+}

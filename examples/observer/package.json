@@ -1,0 +1,21 @@
+{
+  "name": "@example/observe",
+  "type": "module",
+  "main": "source/app.ts",
+  "scripts": {
+    "dev": "buny dev",
+    "start": "buny start"
+  },
+  "dependencies": {
+    "@bunyjs/core": "*",
+    "@bunyjs/di": "*",
+    "@bunyjs/ioc": "*",
+    "@bunyjs/config": "*",
+    "@bunyjs/event": "*",
+    "@bunyjs/logger": "*"
+  },
+  "devDependencies": {
+    "buny": "*"
+  },
+  "private": true
+}

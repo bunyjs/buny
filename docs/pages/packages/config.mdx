@@ -1,0 +1,91 @@
+import {Callout} from "nextra/components";
+
+# Config
+
+<Callout>
+  This module is required and peer-dependent for `@buny/core` package.
+</Callout>
+
+## Introduction
+
+Config package is extendable configuration module for buny packages.
+
+## Installation
+
+To install the package, run the following command:
+
+```bash
+npm install @buny/config
+```
+
+## Usage
+
+```typescript
+import Config from "@buny/config";
+
+declare module "@buny/config" {
+  interface ExtendableConfig {
+    port: number;
+  }
+}
+
+@Usable()
+class MyService {
+  @Use()
+  config: Config;
+
+  init() {
+    console.log(this.config.port);
+  }
+}
+```
+
+## API
+
+### `get`
+
+get configuration value by key
+
+```typescript
+config.get(key: string): any;
+```
+
+### `set`
+
+set configuration value by key
+
+```typescript
+config.set(key: string, value: any): void;
+```
+
+### `getEnv`
+
+get environment variable by key
+
+```typescript
+config.getEnv(key: string): any;
+```
+
+### `setEnv`
+
+set environment variable by key
+
+```typescript
+config.setEnv(key: string, value: any): void;
+```
+
+### `update`
+
+update configuration object
+
+```typescript
+config.update(config: ExtendableConfig): void;
+```
+
+### `static update`
+
+resolve config module and update configuration object
+
+```typescript
+Config.update(config: ExtendableConfig): void;
+```

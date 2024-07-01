@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "useDefineForClassFields": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "rootDir": "source",
+    "jsx": "react-jsx",
+    "lib": [
+      "esnext",
+      "dom"
+    ]
+  },
+  "include": [
+    "source"
+  ],
+  "exclude": [
+    "dist"
+  ]
+}

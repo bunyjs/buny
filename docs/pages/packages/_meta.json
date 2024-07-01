@@ -1,0 +1,23 @@
+{
+  "buny": {
+    "title": "Buny"
+  },
+  "ioc": {
+    "title": "@buny/ioc"
+  },
+  "di": {
+    "title": "@buny/di"
+  },
+  "event": {
+    "title": "@buny/event"
+  },
+  "logger": {
+    "title": "@buny/logger"
+  },
+  "config": {
+    "title": "@buny/config"
+  },
+  "core": {
+    "title": "@buny/core"
+  }
+}

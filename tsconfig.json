@@ -1,0 +1,11 @@
+{
+  "extends": "@meslzy/tsconfig",
+  "compilerOptions": {
+    "useDefineForClassFields": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

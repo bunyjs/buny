@@ -1,0 +1,77 @@
+import {Callout} from "nextra/components";
+
+# Logger
+
+<Callout>
+  This module is required and peer-dependent for `@buny/core` package.
+</Callout>
+
+## Introduction
+
+Logger package offers a straightforward approach to logging messages to the console, ensuring simplicity and ease of use.
+
+## Installation
+
+To install the package, run the following command:
+
+```bash
+npm install @buny/logger
+```
+
+## Usage
+
+To use `@buny/logger` import Logger package and inject it into your module.
+
+```ts {3, 7-8}
+import {Usable, Use} from "@buny/di";
+
+import Logger from "@buny/logger";
+
+@Usable()
+class MyClass {
+  @Use()
+  logger: Logger;
+}
+```
+
+## API
+
+### `Logger#info`
+
+Logs an informational message to the console.
+
+```ts
+logger.info("Hello, world!");
+```
+
+### `Logger#warn`
+
+Logs a warning message to the console.
+
+```ts
+logger.warn("Hello, world!");
+```
+
+### `Logger#error`
+
+Logs an error message to the console.
+
+```ts
+logger.error(new Error("Hello, world!"));
+```
+
+### `Logger#debug`
+
+Logs a debug message to the console.
+
+```ts
+logger.debug("Hello, world!");
+```
+
+### `Logger#mark`
+
+Highlights a message in the console.
+
+```ts
+logger.info("Hello, ", logger.mark("world!"));
+```

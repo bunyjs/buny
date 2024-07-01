@@ -1,0 +1,38 @@
+{
+  "name": "@bunyjs/event",
+  "description": "event module for BunyJS applications",
+  "version": "0.0.1",
+  "homepage": "https://bunyjs.com/packages/event",
+  "repository": "https://github.com/bunyjs/buny/tree/main/packages/event",
+  "author": {
+    "name": "meslzy",
+    "email": "i@meslzy.com",
+    "url": "https://meslzy.com/"
+  },
+  "type": "module",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "scripts": {
+    "watch": "rosepack -w",
+    "build": "rosepack",
+    "lint": "eslint --fix",
+    "test": "vitest"
+  },
+  "peerDependencies": {
+    "@bunyjs/di": "*",
+    "@bunyjs/ioc": "*",
+    "@bunyjs/config": "*",
+    "@bunyjs/logger": "*"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "buny",
+    "event"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "mit"
+}

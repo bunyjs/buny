@@ -1,0 +1,87 @@
+import {Callout} from "nextra/components";
+
+# Core
+
+## Introduction
+
+This package offers the core functionalities of Buny. It provides set of events, app module, and many other utilities.
+
+## Installation
+
+To install the package, run the following command:
+
+```bash
+npm install @buny/core
+```
+
+### Peer Dependencies
+
+This package requires the following peer dependencies:
+
+- [`@buny/ioc`](/packages/ioc) - IoC package for container
+- [`@buny/di`](/packages/di) - DI package for decorators
+- [`@buny/config`](/packages/config) - Config package for configuration
+- [`@buny/event`](/packages/event) - Event package for events
+- [`@buny/logger`](/packages/logger) - Logger package for logging
+
+## Usage
+
+```typescript
+import App, {Init, Start} from "@buny/core";
+
+class MyServer extends App {
+  @Init()
+  init() {
+    // create server
+  }
+
+  @Start()
+  start() {
+    // start server
+  }
+}
+
+await MyServer.bootstrap();
+```
+
+## API
+
+### App
+
+The `App` class is the main class that can be extended by your app and bootstrapped.
+
+#### `static bootstrap(): Promise<void>`
+
+This method bootstraps the application by resolving the application class and calling the event methods.
+
+### Events
+
+When app is bootstrapped, it goes through a series of events. The following events are available:
+
+- `BeforeInit` - Called before the application is initialized
+- `OnInit` - Called when the application is initialized
+- `AfterInit` - Called after the application is initialized
+
+- `BeforeStart` - Called before the application is started
+- `OnStart` - Called when the application is started
+- `AfterStart` - Called after the application is started
+
+- `BeforeShutdown` - Called before the application is shutdown
+- `OnShutdown` - Called when the application is shutdown
+- `AfterShutdown` - Called after the application is shutdown
+
+### Decorators
+
+The following decorators are available:
+
+- `BeforeInit` - Marks a method as a event method that is called before the application is initialized
+- `Init` - Marks a method as a event method that is called when the application is initialized
+- `AfterInit` - Marks a method as a event method that is called after the application is initialized
+
+- `BeforeStart` - Marks a method as a event method that is called before the application is started
+- `Start` - Marks a method as a event method that is called when the application is started
+- `AfterStart` - Marks a method as a event method that is called after the application is started
+
+- `BeforeShutdown` - Marks a method as a event method that is called before the application is shutdown
+- `Shutdown` - Marks a method as a event method that is called when the application is shutdown
+- `AfterShutdown` - Marks a method as a event method that is called after the application is shutdown

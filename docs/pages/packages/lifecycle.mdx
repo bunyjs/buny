@@ -1,0 +1,58 @@
+import {Callout} from "nextra/components";
+
+# Event
+
+<Callout>
+  This module is required and peer-dependent for `@buny/core` package.
+</Callout>
+
+## Introduction
+
+Event package provide the core functionality for managing the event of the application. It provides a way to register and execute the events.
+
+## Installation
+
+To install the package, run the following command:
+
+```bash
+npm install @buny/event
+```
+
+## Usage
+
+To use `@buny/event` import Logger package and inject it into your module.
+
+```typescript
+import Event, {EventContext} from "@buny/event";
+
+const startEvent = new EventContext("start"),
+
+const OnStart = startEvent.createDecorator();
+
+@Usable()
+class MyModule {
+  @OnStart()
+  onStart() {
+    console.log("Starting the application");
+  }
+}
+
+Event.invoke(startEvent);
+```
+
+## API
+
+### EventContext
+
+`EventContext` is a class that represents the event context.
+
+#### createDecorator
+
+`EventContext@createDecorator` is a method that creates a decorator for the event context.
+
+##### Parameters
+
+##### `options` - `EventOptions` (optional)
+
+- **`before`** - `Token` - The event token that should be executed before the current event.
+- **`after`** - `Token` - The event token that should be executed after the current event.

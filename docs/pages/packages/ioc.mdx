@@ -1,0 +1,207 @@
+import {Callout} from "nextra/components";
+
+# Ioc
+
+<Callout>
+  This module is required and peer-dependent for `@buny/core` package.
+</Callout>
+
+## Introduction
+
+Ioc package offers powerful Inversion of Control container for managing dependencies in your application.
+
+## Installation
+
+To install the package, run the following command:
+
+```bash
+npm install @buny/ioc
+```
+
+## Usage
+
+```typescript
+import container, {Token, useValue} from "@buny/ioc";
+
+const token = Token.create<string>("token");
+
+container.bind(token, useValue({
+  value: "Hello, World!"
+}));
+
+const value = container.resolve(token);
+
+console.log(value); // Hello, World!
+```
+
+## API
+
+### `container`
+
+The default export of the package is the container instance, which is used by the application to manage dependencies.
+
+#### `container.bind`
+
+Add a provider to the container.
+
+#### `container.bindMany`
+
+Add multiple providers to the container.
+
+#### `container.map`
+
+Map a token to another token.
+
+#### `container.mapMany`
+
+Map multiple tokens to other tokens.
+
+#### `container.resolve`
+
+Resolve a dependency or multiple dependencies from the container by token.
+
+#### `container.resolveOr`
+
+Resolve a dependency or multiple dependencies from the container by token or return a default value.
+
+#### `container.use`
+
+Get a provider from the container by token.
+
+#### `container.useOr`
+
+Get a provider from the container by token or return a default value.
+
+#### `container.useMany`
+
+Get multiple providers from the container by tokens.
+
+#### `container.hydrate`
+
+Hydrate a provider from the container by token.
+
+#### `container.dispose`
+
+Dispose a provider from the container by token.
+
+#### `container.disposeAll`
+
+Dispose all providers from the container.
+
+#### `container.destroy`
+
+Destroy the container.
+
+---
+
+### `Token`
+
+The `Token` class is used to create unique identifiers for dependencies.
+
+#### `Token.create`
+
+Create a new token from a string or combine multiple strings.
+
+##### Example
+
+```typescript
+import {Token} from "@buny/ioc";
+
+const token = Token.create<string>("token");
+console.log(token.id); // token
+const token = Token.create<string>("token", "1");
+console.log(token.id); // token:1
+```
+
+#### `Token.from`
+
+Create a new token from a string, class, function, or any other valid type to be used as a unique identifier.
+
+- will throw an error if the value is not a valid type.
+
+##### Example
+
+```typescript
+import {Token} from "@buny/ioc";
+
+class MyClass {
+}
+
+const token = Token.from<MyClass>(MyClass);
+console.log(token.id); // MyClass
+```
+
+### `Provider`
+
+The `Provider` class is abstract and should be extended to create custom providers.
+- Ioc package provides several built-in providers that can be used to manage dependencies.
+
+#### ClassProvider
+
+The `ClassProvider` class is used to create a provider for classes.
+
+##### useClass
+
+create a provider for a class.
+
+##### Example
+
+```typescript
+import container, {Token, useClass} from "@buny/ioc";
+
+class Service {
+}
+
+container.bind(useClass({
+   constructor: Service,
+}));
+
+const service = container.resolve(Service);
+console.log(service instanceof Service); // true
+```
+
+#### FactoryProvider
+
+The `FactoryProvider` class is used to create a provider for factories.
+
+##### useFactory
+
+create a provider for a factory.
+
+##### Example
+
+```typescript
+import container, {Token, useFactory} from "@buny/ioc";
+
+const token = Token.create<string>("token");
+
+container.bind(token, useFactory({
+  factory: () => "Hello, World!",
+}));
+
+const value = container.resolve(token);
+console.log(value); // Hello, World!
+```
+
+#### ValueProvider
+
+The `ValueProvider` class is used to create a provider for values.
+
+##### useValue
+
+create a provider for a value.
+
+##### Example
+
+```typescript
+import container, {Token, useValue} from "@buny/ioc";
+
+const token = Token.create<string>("token");
+
+container.bind(token, useValue({
+  value: "Hello, World!",
+}));
+
+const value = container.resolve(token);
+console.log(value); // Hello, World!
+```
